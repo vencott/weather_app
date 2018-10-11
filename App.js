@@ -1,12 +1,18 @@
-import React from 'react';
-import {StyleSheet, Text, View, ActivityIndicator} from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View} from 'react-native';
+import Loading from "./src/Loading";
 
-export default class App extends React.Component {
+export default class App extends Component {
+    state = {
+        isLoaded: false
+    };
+
     render() {
+        const {isLoaded} = this.state.isLoaded;
+
         return (
             <View style={styles.container}>
-                <View style={styles.redView}/>
-                <View style={styles.yellowView}/>
+                {isLoaded ? null : <Loading/>}
             </View>
         );
     }
@@ -15,18 +21,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    redView: {
-        height: 50,
-        width: 50,
-        backgroundColor: 'red'
-    },
-    yellowView: {
-        height: 50,
-        width: 50,
-        backgroundColor: 'yellow'
+        backgroundColor: 'white',
     }
 });
