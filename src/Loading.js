@@ -1,10 +1,11 @@
 import React from 'react';
-import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
-export default function Loading() {
+export default function Loading({error}) {
     return (
         <View style={styles.container}>
             <Text style={styles.loadingText}>Getting the weather now...</Text>
+            {error ? <Text style={styles.errorText}>{error}</Text> : null}
         </View>
 
     );
@@ -20,5 +21,10 @@ const styles = StyleSheet.create({
     loadingText: {
         fontSize: 38,
         marginBottom: 24,
+    },
+    errorText: {
+        color: 'red',
+        backgroundColor: 'transparent',
+        marginBottom: 40
     }
 });
