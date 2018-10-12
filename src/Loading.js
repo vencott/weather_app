@@ -5,7 +5,10 @@ export default function Loading({error}) {
     return (
         <View style={styles.container}>
             <Text style={styles.loadingText}>Getting the weather now...</Text>
-            {error ? <Text style={styles.errorText}>{error}</Text> : null}
+            {error ?
+                <Text style={styles.errorText}>{error}</Text>
+                :
+                null}
         </View>
 
     );
