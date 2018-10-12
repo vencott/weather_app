@@ -1,12 +1,24 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, StatusBar} from 'react-native';
+import {StatusBar, StyleSheet, View} from 'react-native';
 import Loading from "./src/Loading";
 import Weather from "./src/Weather";
 
 export default class App extends Component {
     state = {
-        isLoaded: true
+        isLoaded: false
     };
+
+    componentDidMount() {
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                this.setState({
+                    isLoaded: true
+                })
+            },
+            error => {
+                console.log(error);
+            })
+    }
 
     render() {
         const {isLoaded} = this.state;

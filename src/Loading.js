@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
     },
     loadingText: {
         fontSize: 38,
-        marginBottom: 100,
+        marginBottom: 24,
     }
 });
