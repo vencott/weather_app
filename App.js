@@ -32,7 +32,7 @@ export default class App extends Component {
             <View style={styles.container}>
                 {isLoaded ?
                     <Weather
-                        temperature={Math.floor(this.state.temperature - 273.15)}
+                        temperature={Math.ceil(this.state.temperature - 273.15)}
                         weatherName={this.state.weatherName}/>
                     :
                     <Loading

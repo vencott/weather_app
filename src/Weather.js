@@ -1,57 +1,57 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {LinearGradient} from "expo";
-import {Ionicons} from "@expo/vector-icons";
+import {MaterialCommunityIcons} from "@expo/vector-icons";
 import PropTypes from "prop-types";
 
 const WeatherCases = {
     Rain: {
         colors: ["#00C6FB", "#005BEA"],
         title: "Raining like a MF",
-        subTitle: "For more info look outside",
-        icon: "ios-rainy"
+        subtitle: "For more info look outside",
+        icon: "weather-rainy"
     },
     Clear: {
         colors: ["#FEF253", "#FF7300"],
         title: "Sunny as fuck",
-        subTitle: "Go get your ass burnt",
-        icon: "ios-sunny"
+        subtitle: "Go get your ass burnt",
+        icon: "weather-sunny"
     },
     Thunderstorm: {
         colors: ["#00ECBC", "#007ADF"],
         title: "Thunderstorm in the house",
-        subTitle: "Actually, outside of the house",
-        icon: "ios-thunderstorm"
+        subtitle: "Actually, outside of the house",
+        icon: "weather-lightning"
     },
     Clouds: {
         colors: ["#D7D2CC", "#304352"],
         title: "Clouds",
-        subTitle: "I know, fucking boring",
-        icon: "ios-cloudy"
+        subtitle: "I know, fucking boring",
+        icon: "weather-cloudy"
     },
     Snow: {
         colors: ["#7DE2FC", "#B9B6E5"],
         title: "Cold as balls",
-        subTitle: "Do you want to build a snowman? Fuck no.",
-        icon: "ios-snow"
+        subtitle: "Do you want to build a snowman? Fuck no.",
+        icon: "weather-snowy"
     },
     Drizzle: {
         colors: ["#89F7FE", "#66A6FF"],
         title: "Drizzle",
-        subTitle: "Is like rain, but gay 🏳️‍🌈",
-        icon: "ios-rainy-outside"
+        subtitle: "Is like rain, but gay 🏳️‍🌈",
+        icon: "weather-hail"
     },
     Haze: {
         colors: ["#89F7FE", "#66A6FF"],
         title: "Haze",
-        subTitle: "Don't know what that is 💩",
-        icon: "ios-hail"
+        subtitle: "Don't know what that is 💩",
+        icon: "weather-hail"
     },
     Mist: {
         colors: ["#D7D2CC", "#304352"],
         title: "Mist!",
-        subTitle: "It's like you have no glasses on.",
-        icon: "ios-fog"
+        subtitle: "It's like you have no glasses on.",
+        icon: "weather-fog"
     }
 };
 
@@ -60,13 +60,13 @@ function Weather({temperature, weatherName}) {
     return (
         <LinearGradient colors={weather.colors} style={styles.container}>
             <View style={styles.upper}>
-                <Ionicons color="white" size={120} name={weather.icon}/>
-                <Text style={styles.temperature}>{temperature}°</Text>
+                <MaterialCommunityIcons color="white" size={120} name={weather.icon}/>
+                <Text style={styles.temperature}>{temperature}°C</Text>
             </View>
 
             <View style={styles.lower}>
                 <Text style={styles.title}>{weather.title}</Text>
-                <Text style={styles.subTitle}>{weather.subTitle}</Text>
+                <Text style={styles.subtitle}>{weather.subtitle}</Text>
             </View>
         </LinearGradient>
     );
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         fontWeight: '300'
     },
-    subTitle: {
+    subtitle: {
         fontSize: 24,
         backgroundColor: 'transparent',
         color: 'white',

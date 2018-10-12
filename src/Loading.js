@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 
 export default function Loading({error}) {
     return (
@@ -9,6 +9,7 @@ export default function Loading({error}) {
                 <Text style={styles.errorText}>{error}</Text>
                 :
                 null}
+            <ActivityIndicator/>
         </View>
 
     );
@@ -19,15 +20,17 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#FDF6AA',
         justifyContent: 'flex-end',
-        paddingLeft: 25
+        paddingBottom: 14
     },
     loadingText: {
         fontSize: 38,
-        marginBottom: 24,
+        paddingLeft: 25,
+        marginBottom: 10,
     },
     errorText: {
         color: 'red',
         backgroundColor: 'transparent',
-        marginBottom: 40
+        marginBottom: 40,
+        paddingLeft: 25
     }
 });
